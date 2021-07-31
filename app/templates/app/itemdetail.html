@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    <title>Item Detail</title>
+{% endblock %}
+{% block content %}
+    <h1>{{ item.item }}</h1>
+    <time>Running from {{ item.datetime }} untill {{ item.expire_date }}</time>
+    <h6>Last offer: ${{item.last_offer_usd}} from {{item.last_offer_user}}</h6>
+    {% if item.status == "open" %}
+        <h6>Status: Open</h6>
+        <em>Make an offer:</em>
+        <form method="POST" class="form-group">{% csrf_token %}
+        <button type="submit" class="btn btn-success" name="offer" value="offer">Offer</button>
+    </form>
+    {% endif %}
+{% endblock %}

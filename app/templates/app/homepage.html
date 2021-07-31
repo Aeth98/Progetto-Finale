@@ -1,0 +1,8 @@
+{% extends 'app/base.html' %}
+{% block title %}
+    <title>Homepage</title>
+{% endblock %}
+{% block content %}
+    <h5><a href="{% url 'itemlist' %}">Items List</a></h5>
+    <h5><a href="{% url 'history' %}">History</a></h5>
+{% endblock %}
